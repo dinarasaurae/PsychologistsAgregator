@@ -11,6 +11,7 @@ import { Psychologist } from './psychologist.entity';
 import { Chat } from './chat.entity';
 import { Appointment } from './appointment.entity';
 import { Review } from './review.entity';
+import { Role } from '../enums/userRoles.enum';
 
 @Entity('users')
 export class User {
@@ -28,6 +29,13 @@ export class User {
 
   @Column({ nullable: true })
   phone?: string;
+
+  @Column({
+    type: 'enum',
+    enum: Role,
+    default: Role.User,
+  })
+  role: Role;
 
   @CreateDateColumn()
   created_at: Date;
