@@ -7,9 +7,11 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { User } from './models/user.entity';
 import { UserModule } from './routes/user.module';
 import { AuthModule } from './routes/auth.module';
+import { ChatModule } from './routes/chat.module';
 import { AppointmentModule } from './routes/appointment.module';
 import { PsychologistModule } from './routes/psychologist.module';
 import { SpecializationModule } from './routes/specialization.module';
+import { ScheduleModule } from './routes/schedule.module';
 
 @Module({
   imports: [
@@ -32,6 +34,8 @@ import { SpecializationModule } from './routes/specialization.module';
 
     UserModule,
     AuthModule,
+    ChatModule,
+    ScheduleModule,
     AppointmentModule,
     PsychologistModule,
     SpecializationModule,
